@@ -5,6 +5,7 @@ import InfoCard from "../InfoCard";
 
 // style
 import styled from "styled-components";
+import { ResponsiveCardContainer } from "../ResponsiveComponents";
 import { CircularProgress } from "@material-ui/core";
 
 const People = () => {
@@ -39,7 +40,7 @@ const People = () => {
     <MainWrapper>
       <Column>
         <Search />
-        <CardContainer>
+        <ResponsiveCardContainer>
           {peopleReady ? (
             peopleList.map((person, idx) => {
               return (
@@ -53,7 +54,7 @@ const People = () => {
           ) : (
             <CircularProgress />
           )}
-        </CardContainer>
+        </ResponsiveCardContainer>
 
         {peopleReady && (
           <ButtonWrapper>
@@ -79,16 +80,16 @@ const Column = styled.div`
   flex-direction: column;
 `;
 
-const CardContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  width: 1560px;
-  height: 50%;
-  padding-bottom: 130px;
-  margin: auto;
-`;
+// const CardContainer = styled.div`
+//   display: flex;
+//   flex-wrap: wrap;
+//   align-items: center;
+//   justify-content: center;
+//   width: 1560px;
+//   height: 50%;
+//   padding-bottom: 130px;
+//   margin: auto;
+// `;
 
 const ButtonWrapper = styled.div`
   display: flex;

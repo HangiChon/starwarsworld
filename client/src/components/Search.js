@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import useFetch from "../hooks/useFetch";
+import InfoCard from "./InfoCard";
 
 // style
 import styled from "styled-components";
-import InfoCard from "./InfoCard";
+import { ResponsiveCardContainer, BoldText } from "./ResponsiveComponents";
 
 const Search = () => {
   const [query, setQuery] = useState(undefined);
@@ -36,13 +37,20 @@ const Search = () => {
       </SearchForm>
 
       {isLoaded && searchResult.results.length > 0 && query.length !== 0 && (
-        <CardContainer>
-          {searchResult.results.map((result, idx) => {
-            return (
-              <InfoCard key={`person-${idx + 1}`} info={result} type="person" />
-            );
-          })}
-        </CardContainer>
+        <>
+          <ResponsiveCardContainer result>
+            {searchResult.results.map((result, idx) => {
+              return (
+                <InfoCard
+                  key={`person-${idx + 1}`}
+                  info={result}
+                  type="person"
+                />
+              );
+            })}
+          </ResponsiveCardContainer>
+          <BoldText result>- End of Result -</BoldText>
+        </>
       )}
     </>
   );

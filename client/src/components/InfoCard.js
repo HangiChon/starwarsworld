@@ -2,15 +2,21 @@ import React from "react";
 
 // style
 import styled from "styled-components";
+import {
+  ResponsiveWrapper,
+  BoldText,
+  Text,
+  Title
+} from "./ResponsiveComponents";
 
-const InfoCard = ({ type, info }) => {
+const InfoCard = ({ type, info, isForResult }) => {
   console.log(type);
 
   // person card
   if (type === "person") {
     const { name, gender, birth_year, mass, height } = info;
     return (
-      <Wrapper>
+      <ResponsiveWrapper xs="4" sm="3" md="2.5" lg="2">
         <BoldText>{name}</BoldText>
         <div>
           <Title>Gender</Title>
@@ -27,7 +33,7 @@ const InfoCard = ({ type, info }) => {
             {height !== "unknown" ? height + " cm" : "- cm"}
           </Text>
         </div>
-      </Wrapper>
+      </ResponsiveWrapper>
     );
 
     // planet card
@@ -64,64 +70,56 @@ const InfoCard = ({ type, info }) => {
     };
 
     return (
-      <Wrapper planets>
+      <ResponsiveWrapper xs="5" sm="3.5" md="2.5" lg="2" planets>
         <BoldText>{name}</BoldText>
         <div>
           <Title>Population</Title>
-          <Text>{formatPopulation(populationSimple)}</Text>
+          <Text planets>{formatPopulation(populationSimple)}</Text>
         </div>
         <div>
           <Title>Climate</Title>
-          <Text>{climate}</Text>
+          <Text planets>{climate}</Text>
         </div>
         <div>
           <Title>Diameter</Title>
-          <Text>{diameter} km</Text>
+          <Text planets>{diameter} km</Text>
         </div>
         <div>
           <Title>Gravity</Title>
-          <Text>{gravity}</Text>
+          <Text planets>{gravity}</Text>
         </div>
         <div>
           <Title>Terrain</Title>
-          <Text>{terrain}</Text>
+          <Text planets>{terrain}</Text>
         </div>
-      </Wrapper>
+      </ResponsiveWrapper>
     );
 
     // starships card
   } else if (type === "starships") {
-    const {
-      name,
-      model,
-      manufacturer,
-      crew,
-      passengers,
-      cargo_capacity,
-      MGLT
-    } = info;
+    const { name, model, manufacturer, crew, passengers, MGLT } = info;
     return (
-      <Wrapper starships>
+      <ResponsiveWrapper xs="5" sm="3.5" starships>
         <BoldText>{name}</BoldText>
         <div>
           <Title>Model</Title>
-          <Text>{model}</Text>
+          <Text starships>{model}</Text>
         </div>
         <div>
           <Title>Made by</Title>
-          <Text>{manufacturer}</Text>
+          <Text starships>{manufacturer}</Text>
         </div>
         <div>
           <Title>Crew / Passengers</Title>
-          <Text>
+          <Text starships>
             {crew} / {passengers}
           </Text>
         </div>
         <div>
           <Title>Speed (megalight/hour)</Title>
-          <Text>{MGLT}</Text>
+          <Text starships>{MGLT}</Text>
         </div>
-      </Wrapper>
+      </ResponsiveWrapper>
     );
   }
 };
@@ -136,21 +134,21 @@ const Wrapper = styled.div`
   margin: 0 5px 10px;
 `;
 
-const Title = styled.p`
-  color: lightgrey;
-  font-size: 13px;
-`;
+// const Title = styled.p`
+//   color: lightgrey;
+//   font-size: 13px;
+// `;
 
-const BoldText = styled.p`
-  font-weight: bolder;
-  font-size: 20px;
-  margin-bottom: 10px;
-`;
+// const BoldText = styled.p`
+//   font-weight: bolder;
+//   font-size: 20px;
+//   margin-bottom: 10px;
+// `;
 
-const Text = styled.p`
-  color: black;
-  font-size: 17px;
-  margin-bottom: 10px;
-`;
+// const Text = styled.p`
+//   color: black;
+//   font-size: 17px;
+//   margin-bottom: 10px;
+// `;
 
 export default InfoCard;

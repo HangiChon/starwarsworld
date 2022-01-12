@@ -4,6 +4,7 @@ import InfoCard from "../InfoCard";
 
 // style
 import styled from "styled-components";
+import { ResponsiveCardContainer } from "../ResponsiveComponents";
 import { CircularProgress } from "@material-ui/core";
 
 const Starships = () => {
@@ -39,7 +40,7 @@ const Starships = () => {
   return (
     <MainWrapper>
       <Column>
-        <CardContainer>
+        <ResponsiveCardContainer>
           {starshipsReady ? (
             starshipsList.map((starship, idx) => {
               return (
@@ -55,7 +56,7 @@ const Starships = () => {
           ) : (
             <CircularProgress />
           )}
-        </CardContainer>
+        </ResponsiveCardContainer>
 
         {starshipsReady && (
           <ButtonWrapper>

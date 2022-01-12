@@ -5,6 +5,7 @@ import InfoCard from "../InfoCard";
 // style
 import styled from "styled-components";
 import { CircularProgress } from "@material-ui/core";
+import { ResponsiveCardContainer } from "../ResponsiveComponents";
 
 const Planets = () => {
   const [pageNumber, setPageNumber] = useState(1);
@@ -38,7 +39,7 @@ const Planets = () => {
   return (
     <MainWrapper>
       <Column>
-        <CardContainer>
+        <ResponsiveCardContainer>
           {planetsReady ? (
             planetsList.map((planet, idx) => {
               return (
@@ -54,7 +55,7 @@ const Planets = () => {
           ) : (
             <CircularProgress />
           )}
-        </CardContainer>
+        </ResponsiveCardContainer>
 
         {planetsReady && (
           <ButtonWrapper>
