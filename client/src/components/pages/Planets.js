@@ -14,7 +14,6 @@ const Planets = () => {
   const [data, isLoaded, , , , setRefetchRequired] = useFetch(
     `/api/planets/?page=${pageNumber}`
   );
-  console.log(data);
 
   useEffect(() => {
     if (isLoaded) {

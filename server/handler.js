@@ -40,6 +40,17 @@ const getPlanets = async (req, res) => {
 //***********************
 // GET - /api/starships *
 //***********************
+const getStarships = async (req, res) => {
+  console.log("page", req.query.page);
+  try {
+    const received = await axios.get(
+      `https://swapi.dev/api/starships/?page=${req.query.page}`
+    );
+    response(res, 200, "Successfully retrieved starships", received.data);
+  } catch (error) {
+    response(res, 500, "Server Error");
+  }
+};
 
 //*******************************
 //  GET - /api/people? *
@@ -61,4 +72,4 @@ const getPerson = async (req, res) => {
 //***********
 
 // exports
-module.exports = { getPeople, getPerson, getPlanets };
+module.exports = { getPeople, getPerson, getPlanets, getStarships };

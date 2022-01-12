@@ -50,9 +50,7 @@ const InfoCard = ({ type, info }) => {
       checkBil && (cut = 9) && (unit = " billion(s)");
       checkTril && (cut = 12) && (unit = " trillion(s)");
 
-      if (checkUnknown) {
-        return "-";
-      } else if (checkLow) {
+      if (checkUnknown || checkLow) {
         return population;
       } else {
         return population
@@ -93,9 +91,36 @@ const InfoCard = ({ type, info }) => {
 
     // starships card
   } else if (type === "starships") {
+    const {
+      name,
+      model,
+      manufacturer,
+      crew,
+      passengers,
+      cargo_capacity,
+      MGLT
+    } = info;
     return (
-      <Wrapper>
-        <BoldText>sdf</BoldText>
+      <Wrapper starships>
+        <BoldText>{name}</BoldText>
+        <div>
+          <Title>Model</Title>
+          <Text>{model}</Text>
+        </div>
+        <div>
+          <Title>Made by</Title>
+          <Text>{manufacturer}</Text>
+        </div>
+        <div>
+          <Title>Crew / Passengers</Title>
+          <Text>
+            {crew} / {passengers}
+          </Text>
+        </div>
+        <div>
+          <Title>Speed (megalight/hour)</Title>
+          <Text>{MGLT}</Text>
+        </div>
       </Wrapper>
     );
   }
@@ -105,7 +130,8 @@ const Wrapper = styled.div`
   border: 1px solid grey;
   border-radius: 10px;
   width: 250px;
-  height: ${props => props.planets && "330px"};
+  ${props => props.planets && "height: 330px;"}
+  ${props => props.starships && "height: 340px;"}
   padding: 15px;
   margin: 0 5px 10px;
 `;
