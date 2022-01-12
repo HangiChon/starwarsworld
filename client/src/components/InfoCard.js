@@ -20,7 +20,8 @@ const InfoCard = ({ person }) => {
       <div>
         <Title>Physical</Title>{" "}
         <Text>
-          {mass}kg, {height}cm
+          {mass !== "unknown" ? mass + " kg / " : "- kg / "}
+          {height !== "unknown" ? height + " cm" : "- cm"}
         </Text>
       </div>
     </Wrapper>

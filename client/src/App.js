@@ -21,7 +21,6 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/people" element={<People />} />
-          {/* <Route exact path="/people/:personName" element={<Person />} /> */}
           <Route exact path="/planets" element={<Planets />} />
           <Route exact path="/starships" element={<Starships />} />
         </Routes>
