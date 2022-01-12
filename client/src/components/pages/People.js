@@ -42,7 +42,13 @@ const People = () => {
         <CardContainer>
           {peopleReady ? (
             peopleList.map((person, idx) => {
-              return <InfoCard key={`person-${idx + 1}`} person={person} />;
+              return (
+                <InfoCard
+                  key={`person-${idx + 1}`}
+                  info={person}
+                  type="person"
+                />
+              );
             })
           ) : (
             <CircularProgress />

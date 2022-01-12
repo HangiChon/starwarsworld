@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 
 // style
@@ -7,7 +6,6 @@ import styled from "styled-components";
 import InfoCard from "./InfoCard";
 
 const Search = () => {
-  const navigate = useNavigate();
   const [query, setQuery] = useState(undefined);
   const [searchResult, isLoaded, , , , setRefetchRequired] = useFetch(
     `/api/people/search/?value=${query}`
@@ -40,7 +38,9 @@ const Search = () => {
       {isLoaded && searchResult.results.length > 0 && query.length !== 0 && (
         <CardContainer>
           {searchResult.results.map((result, idx) => {
-            return <InfoCard key={`person-${idx + 1}`} person={result} />;
+            return (
+              <InfoCard key={`person-${idx + 1}`} info={result} type="person" />
+            );
           })}
         </CardContainer>
       )}
@@ -51,7 +51,7 @@ const Search = () => {
 const SearchForm = styled.form`
   display: flex;
   justify-content: center;
-  margin: 30px auto;
+  margin: 0 auto 30px;
   width: 250px;
   position: relative;
 `;

@@ -2,7 +2,7 @@
 const express = require("express");
 
 // handler imports
-const { getPeople, getPerson } = require("./handler");
+const { getPeople, getPerson, getPlanets } = require("./handler");
 
 // constants
 const app = express();
@@ -21,7 +21,8 @@ app.get(`/api/people/`, getPeople);
 //***********************
 //  GET - /api/planets  *
 //***********************
-// app.get("/api/planets", getPlanets);
+app.get("/api/planets", getPlanets);
+
 //***********************
 // GET - /api/starships *
 //***********************

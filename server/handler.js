@@ -25,6 +25,17 @@ const getPeople = async (req, res) => {
 //***********************
 //  GET - /api/planets  *
 //***********************
+const getPlanets = async (req, res) => {
+  console.log("page", req.query.page);
+  try {
+    const received = await axios.get(
+      `https://swapi.dev/api/planets/?page=${req.query.page}`
+    );
+    response(res, 200, "Successfully retrieved planets", received.data);
+  } catch (error) {
+    response(res, 500, "Server Error");
+  }
+};
 
 //***********************
 // GET - /api/starships *
@@ -50,4 +61,4 @@ const getPerson = async (req, res) => {
 //***********
 
 // exports
-module.exports = { getPeople, getPerson };
+module.exports = { getPeople, getPerson, getPlanets };

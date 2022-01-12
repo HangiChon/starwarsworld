@@ -27,6 +27,7 @@ const HeaderWrapper = styled.header`
   height: 120px;
   padding: 10px;
   position: relative;
+  margin-bottom: 30px;
 `;
 
 const Logo = styled.img`
