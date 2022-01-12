@@ -8,7 +8,7 @@ body, html, ul, h1, h2, h3, p, span, button {
 div, header, footer {
   box-sizing: border-box;
 }
-h1, h2, h3, p, span, input {
+h1, h2, h3, p, span, input, button {
   font-family: "Lato", sans-serif
 }
 `;

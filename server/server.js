@@ -6,7 +6,7 @@ const { getPeople } = require("./handler");
 
 // constants
 const app = express();
-const PORT = 5000;
+const PORT = 8000;
 
 app.use(express.json());
 app.use(express.static("public"));
@@ -15,21 +15,21 @@ app.use(express.static("public"));
 //***********************
 //  GET - /api/people   *
 //***********************
-app.get("/api/people", getPeople);
+app.get(`/api/people/`, getPeople);
 
 //***********************
 //  GET - /api/planets  *
 //***********************
-app.get("/api/planets", getPlanets);
+// app.get("/api/planets", getPlanets);
 //***********************
 // GET - /api/starships *
 //***********************
-app.get("/api/starships", getStarships);
+// app.get("/api/starships", getStarships);
 
 //***********************************
 //  GET - /api/people/?search=query *
 //***********************************
-app.get("/api/people/?", getPerson);
+// app.get("/api/people/?", getPerson);
 
 //***********
 // THE REST *

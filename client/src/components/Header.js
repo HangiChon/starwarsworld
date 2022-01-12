@@ -1,14 +1,15 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 // style
 import styled from "styled-components";
 import logo from "../images/logo.png";
 
 const Header = () => {
+  const navigate = useNavigate();
   return (
     <HeaderWrapper>
-      <Logo src={logo} />
+      <Logo src={logo} onClick={() => navigate("/")} />
       <NavItemsWrapper>
         <NavItems to="/people">People</NavItems>
         <NavItems to="/planets">Planets</NavItems>
@@ -24,13 +25,13 @@ const HeaderWrapper = styled.header`
   justify-content: space-between;
   border-bottom: 2px solid grey;
   height: 120px;
-  margin: auto;
   padding: 10px;
   position: relative;
 `;
 
 const Logo = styled.img`
   width: 200px;
+  cursor: pointer;
 `;
 
 const NavItemsWrapper = styled.div`

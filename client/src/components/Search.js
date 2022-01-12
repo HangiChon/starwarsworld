@@ -34,6 +34,10 @@ const Input = styled.input`
   width: 100%;
   height: 40px;
   padding: 0 10px;
+
+  &:focus {
+    outline: none;
+  }
 `;
 
 const Button = styled.button`

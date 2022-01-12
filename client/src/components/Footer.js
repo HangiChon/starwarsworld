@@ -16,8 +16,9 @@ const Footer = () => {
 const FooterWrapper = styled.footer`
   background: lightgrey;
   width: 100%;
-  position: absolute;
-  bottom: 0;
+  position: relative;
+  margin-top: auto;
+  min-height: 75px;
 `;
 
 const TextWrapper = styled.div`
