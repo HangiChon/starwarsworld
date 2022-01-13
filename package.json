@@ -4,5 +4,10 @@
   "main": "index.js",
   "repository": "https://github.com/hanpencnd/starwarsworld.git",
   "author": "Hangi Chon <hanpencnd@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "build": "cd client && yarn build",
+    "install-client": "cd client && yarn",
+    "heroku-postbuild": "yarn install-client && yarn build"
+  }
 }
