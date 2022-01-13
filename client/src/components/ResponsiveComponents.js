@@ -8,13 +8,14 @@ const getWidth = span => {
   return `width: ${(span / 12) * 100}%;`;
 };
 
-// components needed for infocard
+// responsive components needed for infocard
 const ResponsiveCardContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  max-width: 1300px;
+  /* max-width: 1300px; */
+  width: 100vw;
   height: 50%;
   margin: ${props => (props.result ? "0 auto 20px" : "0 auto 50px")};
 `;
@@ -63,6 +64,7 @@ const BoldText = styled.p`
   font-size: 20px;
   margin: ${props => (props.result ? "0 auto 50px" : "0 auto 10px")};
   ${props => props.result && "display: flex;"}
+  ${props => props.hamburger && "cursor: pointer;"}
 
   @media only screen and (max-width: 768px) {
     font-size: 23px;
@@ -80,7 +82,7 @@ const Text = styled.p`
   }
 `;
 
-// responsive nav items into hamburger menu
+// responsive nav items including hamburger menu activation and logo size
 const ResponsiveNavItemsWrapper = styled.div`
   display: flex;
   align-items: center;
@@ -135,6 +137,106 @@ const ResponsiveHamburger = styled.div`
   }
 `;
 
+const ResponsiveLogo = styled.img`
+  width: 150px;
+  cursor: pointer;
+
+  @media only screen and (min-width: 500px) {
+    width: 170px;
+  }
+
+  @media only screen and (min-width: 769px) {
+    width: 190px;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    width: 200px;
+  }
+`;
+
+// responsive components for quote at "/"
+const ResponsiveQuoteWrapper = styled.div`
+  width: 80%;
+  height: 20%;
+  margin: 12% auto;
+
+  @media only screen and (min-width: 500px) {
+    width: 450px;
+  }
+
+  @media only screen and (min-width: 769px) {
+    width: 710px;
+  }
+
+  @media only screen and (min-width: 992px) {
+    width: 940px;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    width: 1100px;
+  }
+`;
+
+const ResponsiveQuote = styled.p`
+  font-size: 1.5em;
+  font-weight: bolder;
+
+  @media only screen and (min-width: 500px) {
+    font-size: 2em;
+  }
+
+  @media only screen and (min-width: 769px) {
+    font-size: 2.1em;
+  }
+
+  @media only screen and (min-width: 992px) {
+    font-size: 2.3em;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    font-size: 2.5em;
+  }
+`;
+
+const ResponsiveQuoteBy = styled.p`
+  font-size: 1em;
+  text-align: right;
+  line-height: 50px;
+
+  @media only screen and (min-width: 500px) {
+    font-size: 1.4em;
+  }
+
+  @media only screen and (min-width: 769px) {
+    font-size: 1.6em;
+  }
+
+  @media only screen and (min-width: 992px) {
+    font-size: 1.8em;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    font-size: 2.1rem;
+  }
+`;
+
+const ResponsiveItalic = styled.span`
+  font-size: 0.65em;
+  font-style: italic;
+
+  @media only screen and (min-width: 500px) {
+    font-size: 0.7em;
+  }
+
+  @media only screen and (min-width: 992px) {
+    font-size: 0.75em;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    font-size: 0.8em;
+  }
+`;
+
 export {
   ResponsiveCardContainer,
   ResponsiveWrapper,
@@ -143,5 +245,10 @@ export {
   Title,
   ResponsiveNavItemsWrapper,
   ResponsiveNavItems,
-  ResponsiveHamburger
+  ResponsiveHamburger,
+  ResponsiveLogo,
+  ResponsiveQuoteWrapper,
+  ResponsiveQuote,
+  ResponsiveQuoteBy,
+  ResponsiveItalic
 };

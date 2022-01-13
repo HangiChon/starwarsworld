@@ -7,7 +7,8 @@ import logo from "../images/logo.png";
 import {
   ResponsiveNavItemsWrapper,
   ResponsiveNavItems,
-  BoldText
+  BoldText,
+  ResponsiveLogo
 } from "./ResponsiveComponents";
 import HamburgerMenu from "./HamburgerMenu";
 
@@ -18,7 +19,7 @@ const Header = () => {
   return (
     <>
       <HeaderWrapper>
-        <Logo src={logo} onClick={() => navigate("/")} />
+        <ResponsiveLogo src={logo} onClick={() => navigate("/")} />
         <ResponsiveNavItemsWrapper>
           <div onClick={() => setHamburgerOpen(!hamburgerOpen)}>
             <HamburgerMenu />
@@ -75,10 +76,10 @@ const HeaderWrapper = styled.header`
   margin-bottom: 30px;
 `;
 
-const Logo = styled.img`
-  width: 200px;
-  cursor: pointer;
-`;
+// const Logo = styled.img`
+//   width: 200px;
+//   cursor: pointer;
+// `;
 
 const HamburgerMenuItems = styled.div`
   display: flex;
