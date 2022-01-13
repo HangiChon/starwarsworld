@@ -12,6 +12,7 @@
   "scripts": {
     "build": "cd client && yarn build",
     "install-client": "cd client && yarn",
-    "heroku-postbuild": "yarn install-client && yarn build"
+    "heroku-postbuild": "yarn install-client && yarn build",
+    "start": "cd server && yarn start"
   }
 }
