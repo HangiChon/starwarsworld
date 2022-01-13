@@ -2,7 +2,13 @@
 const express = require("express");
 
 // handler imports
-const { getPeople, getPerson, getPlanets, getStarships } = require("./handler");
+const {
+  getPeople,
+  getPerson,
+  getPlanets,
+  getStarships,
+  handleRest
+} = require("./handler");
 
 // constants
 const app = express();
@@ -36,7 +42,7 @@ app.get("/api/people/search", getPerson);
 //***********
 // THE REST *
 //***********
-// app.get("*", handleRest);
+app.get("*", handleRest);
 
 // listen to PORT
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));

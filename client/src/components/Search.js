@@ -12,16 +12,15 @@ const Search = () => {
     `/api/people/search/?value=${query}`
   );
 
+  // Note that we wouldn't need handleSubmit function in this approach as it fetches data on every change of input field
+  // Since input field is still a form, button type for submit is given below that will prevent page refresh when pressed.
   const handleSubmit = e => {
     e.preventDefault();
-    console.log(searchResult);
   };
 
   useEffect(() => {
     setRefetchRequired(yes => !yes);
   }, [query]);
-
-  console.log(searchResult);
 
   return (
     <>

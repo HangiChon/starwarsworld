@@ -76,11 +76,6 @@ const HeaderWrapper = styled.header`
   margin-bottom: 30px;
 `;
 
-// const Logo = styled.img`
-//   width: 200px;
-//   cursor: pointer;
-// `;
-
 const HamburgerMenuItems = styled.div`
   display: flex;
   flex-direction: column;
@@ -96,34 +91,5 @@ const HamburgerMenuItems = styled.div`
   padding: 10px;
   z-index: 2;
 `;
-
-// const NavItemsWrapper = styled.div`
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   width: 400px;
-//   position: absolute;
-//   left: calc(50% - 200px);
-//   cursor: pointer;
-// `;
-
-// const NavItems = styled(NavLink)`
-//   color: black;
-//   font-family: "Lato", sans-serif;
-//   font-size: 20px;
-//   font-weight: bolder;
-//   margin-left: 50px;
-//   text-decoration: none;
-
-//   &:first-child {
-//     margin-left: 0;
-//   }
-
-//   &.active,
-//   :hover {
-//     color: #008cb4;
-//     transition: 0.3s ease;
-//   }
-// `;
 
 export default Header;

@@ -14,7 +14,6 @@ const ResponsiveCardContainer = styled.div`
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  /* max-width: 1300px; */
   width: 100vw;
   height: 50%;
   margin: ${props => (props.result ? "0 auto 20px" : "0 auto 50px")};
@@ -26,14 +25,13 @@ const ResponsiveWrapper = styled.div`
   width: 75%;
 
   ${props => props.planets && "height: 330px;"}
-  /* ${props => props.starships && "height: 330px;"} */
+
   padding: 15px;
   margin: 0 5px 20px;
   float: left;
 
   @media only screen and (min-width: 500px) {
     ${({ xs }) => xs && getWidth(xs)};
-    /* ${({ starships }) => starships && "height: 400px;"} */
     margin: 0 15px 20px;
   }
 

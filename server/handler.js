@@ -70,6 +70,9 @@ const getPerson = async (req, res) => {
 //***********
 // THE REST *
 //***********
+const handleRest = async (req, res) => {
+  response(res, 404, "This is obviously not what you are looking for.");
+};
 
 // exports
-module.exports = { getPeople, getPerson, getPlanets, getStarships };
+module.exports = { getPeople, getPerson, getPlanets, getStarships, handleRest };

@@ -15,7 +15,6 @@ const Starships = () => {
   const [data, isLoaded, , , , setRefetchRequired] = useFetch(
     `/api/starships/?page=${pageNumber}`
   );
-  console.log(data);
 
   useEffect(() => {
     if (isLoaded) {
@@ -80,17 +79,6 @@ const MainWrapper = styled.div`
 const Column = styled.div`
   display: flex;
   flex-direction: column;
-`;
-
-const CardContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  width: 1560px;
-  height: 50%;
-  padding-bottom: 130px;
-  margin: auto;
 `;
 
 const ButtonWrapper = styled.div`

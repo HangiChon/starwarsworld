@@ -17,6 +17,7 @@ const People = () => {
     `/api/people/?page=${pageNumber}`
   );
 
+  // when data is received from backend, save it into local state variable to prepare render
   useEffect(() => {
     if (isLoaded) {
       setPeopleList([...data.results]);
@@ -25,6 +26,8 @@ const People = () => {
     }
   }, [isLoaded]);
 
+  // accumulate received data in the state variable for rendering
+  // set limit to load further
   useEffect(() => {
     if (pageNumber > 2) {
       setPeopleList([...peopleList, ...data.results]);
@@ -79,17 +82,6 @@ const Column = styled.div`
   display: flex;
   flex-direction: column;
 `;
-
-// const CardContainer = styled.div`
-//   display: flex;
-//   flex-wrap: wrap;
-//   align-items: center;
-//   justify-content: center;
-//   width: 1560px;
-//   height: 50%;
-//   padding-bottom: 130px;
-//   margin: auto;
-// `;
 
 const ButtonWrapper = styled.div`
   display: flex;
