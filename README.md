@@ -2,6 +2,8 @@
 
 A SPA to render people, planets, and starships from Star Wars with the feature to search for a person.
 
+Visit https://starwarsworld.herokuapp.com/
+
 Stack: React.js(with styled-components library), Node.js, and Express.js.
 
 # How to run
