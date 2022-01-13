@@ -6,9 +6,11 @@ Stack: React.js(with styled-components library), Node.js, and Express.js.
 
 # How to run
 
-1. In terminal go to `../starwarsworld` directory and run `yarn`
-2. go to `../starwarsworld/client` directory and run `yarn start`
-3. go to `../starwarsworld/server` directory and run `yarn start:server`
+In terminal,
+1. Go to `../starwarsworld/client` directory and run `yarn`
+2. Go to `../starwarsworld/server` directory and run `yarn`
+3. Go to `../starwarsworld/client` directory and run `yarn start`
+4. Go to `../starwarsworld/server` directory and run `yarn start:server`
 
 # Preview
 
