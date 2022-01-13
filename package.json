@@ -16,6 +16,8 @@
     "start": "cd server && yarn start"
   },
   "dependencies": {
-    "express": "^4.17.2"
+    "axios": "^0.24.0",
+    "express": "^4.17.2",
+    "nodemon": "^2.0.15"
   }
 }
