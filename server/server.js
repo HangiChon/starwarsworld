@@ -12,10 +12,15 @@ const {
 
 // constants
 const app = express();
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
 
 app.use(express.json());
 app.use(express.static("public"));
+
+// for deployment
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("../client/build"));
+}
 
 // endpoints
 
